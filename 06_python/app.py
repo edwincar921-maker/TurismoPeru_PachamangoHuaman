@@ -19,17 +19,17 @@ try:
     connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};Trusted_Connection=yes;Encrypt=no;'
     conn = pyodbc.connect(connection_string)
     
-    print("-> ¡CONEXIÓN EXITOSA!"))
+    print("-> ¡CONEXIÓN EXITOSA!")
     
-    # 2. Consulta de datos 
+   # 2. Consulta 
     query = """
     SELECT 
         c.documento, 
         r.id_reserva, r.estado,
         p.monto, p.metodo_pago
-    FROM dbo.cliente c
-    INNER JOIN dbo.reserva r ON c.documento = r.documento_cliente
-    INNER JOIN dbo.pago p ON r.id_reserva = p.id_reserva
+    FROM EJPH.Cliente c
+    INNER JOIN EJPH.reserva r ON c.documento = r.documento_cliente
+    INNER JOIN EJPH.pago p ON r.id_reserva = p.id_reserva
     """
     df = pd.read_sql(query, conn)
     
