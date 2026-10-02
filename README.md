@@ -1,0 +1,5 @@
+# TurismoPeru_Seguridad_PachamangoHuaman
+
+## Actividad 4: Principio de Mínimo Privilegio
+**¿Por qué no es adecuado asignar db_owner al vendedor o al analista?**
+Asignar el rol `db_owner` otorga control total sobre la base de datos, lo que permite eliminar tablas, alterar configuraciones de seguridad, modificar roles y realizar respaldos. Esto viola el Principio de Mínimo Privilegio, el cual establece que un usuario solo debe tener los permisos estrictamente necesarios para realizar sus funciones. El vendedor solo requiere registrar y consultar operaciones comerciales, mientras que el analista solo necesita permisos de lectura (SELECT) para generar reportes. Otorgarles privilegios administrativos expone el sistema a modificaciones accidentales o malintencionadas, robo de información y pérdida de datos críticos.
